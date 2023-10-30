@@ -28,7 +28,8 @@ def receive():
                 'bot_id': '4e322229309cfb839189723c1d',
                 'text': data['name'] + ' pinged me!',
             }
-        r = requests.post(url, data=data)
+            r = requests.post(url, data=data)
+
         if data['text'].startswith('/ping'):
             print('sending data')
             send(data['name'] + ' pinged me!')
