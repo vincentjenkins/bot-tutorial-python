@@ -24,7 +24,7 @@ def receive():
     def sendmsg(msg):
         url = 'https://api.groupme.com/v3/bots/post'
         postData = {
-            'bot_id': '4e322229309cfb839189723c1d',
+            'bot_id': '2136fcc43486a18b78d5357206',
             'text': msg,
         }
         headers = {'Content-Type': 'application/json'}
@@ -37,7 +37,7 @@ def receive():
     def sendimg(img):
         url = 'https://api.groupme.com/v3/bots/post'
         postData = {
-            'bot_id': '4e322229309cfb839189723c1d',
+            'bot_id': '2136fcc43486a18b78d5357206',
             'attachments': [
                 {
                     'type': 'image',
