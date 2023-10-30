@@ -4,6 +4,7 @@ import requests
 from flask import Flask, request
 
 app = Flask(__name__)
+data = ""
 
 @app.route('/', methods=['GET'])
 def home():
