@@ -18,6 +18,15 @@ def receive():
     print(data['text'])
     print(data['name'])
 
+    def send(msg):
+        url  = 'https://api.groupme.com/v3/bots/post'
+        print('send url found')
+        data = {
+            'bot_id': '4e322229309cfb839189723c1d',
+            'text': data['name'] + ' pinged me!',
+        }
+        r = requests.post(url, data=data)
+    
     # Prevent self-reply
     if data['sender_type'] != 'bot':
         print('not a bot')
@@ -28,11 +37,11 @@ def receive():
     return 'ok', 200
 
 
-def send(msg):
+'''def send(msg):
     url  = 'https://api.groupme.com/v3/bots/post'
     print('send url found')
     data = {
         'bot_id': '4e322229309cfb839189723c1d',
         'text': data['name'] + ' pinged me!',
     }
-    r = requests.post(url, data=data)
+    r = requests.post(url, data=data)#'''
