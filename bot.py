@@ -4,7 +4,6 @@ import requests
 from flask import Flask, request
 
 app = Flask(__name__)
-data = ""
 
 @app.route('/', methods=['GET'])
 def home():
@@ -13,6 +12,7 @@ def home():
 
 @app.route('/', methods=['POST'])
 def receive():
+    data = request.json
     print('Incoming message:')
     print(data)
 
@@ -28,7 +28,7 @@ def send(msg):
     url  = 'https://api.groupme.com/v3/bots/post'
 
     data = {
-        'bot_id': os.getenv('4e322229309cfb839189723c1d'),
+        'bot_id': '4e322229309cfb839189723c1d',
         'text': msg,
     }
     r = requests.post(url, data=data)
