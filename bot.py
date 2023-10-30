@@ -12,6 +12,7 @@ def home():
 
 @app.route('/', methods=['POST'])
 def shoutTyla():
+    data = request.json
     if data['text'].startswith('1TYLA'):
         def send(msg):
             url  = 'https://api.groupme.com/v3/bots/post'
