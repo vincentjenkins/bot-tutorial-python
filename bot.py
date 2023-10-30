@@ -29,7 +29,12 @@ def receive():
                     'bot_id': '4e322229309cfb839189723c1d',
                     'text': msg,
                 }
-                r = requests.post(url, data=postData)
+                headers = {'Content-Type': 'application/json'}
+                r = requests.post(url, json=postData, headers=headers)
+                print(r.status_code)
+                print(r.text)
+
+
             print('sending data')
             send(data['name'] + ' pinged me!')
 
