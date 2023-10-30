@@ -14,10 +14,13 @@ def home():
 def receive():
     data = request.json
     print('Incoming message:')
-    print(data)
+    print(data['sender_type'])
+    print(data['text'])
+    print(data['name'])
 
     # Prevent self-reply
     if data['sender_type'] != 'bot':
+        print('not a bot')
         if data['text'].startswith('/ping'):
             send(data['name'] + ' pinged me!')
 
