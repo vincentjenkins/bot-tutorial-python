@@ -54,7 +54,8 @@ def receive():
     # Prevent self-reply
     if data['sender_type'] != 'bot':
         print('not a bot')
-        if "you're fucked kid" in data['text'].lower:
+        cleaneddata = data['text'].lower
+        if "you're fucked kid" in cleaneddata:
             print('holy shit')
         if data['text'].startswith('/ping'):
             print('sending data')
