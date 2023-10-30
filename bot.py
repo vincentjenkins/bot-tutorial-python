@@ -4,6 +4,7 @@ import requests
 from flask import Flask, request
 
 app = Flask(__name__)
+data = request.json
 
 @app.route('/', methods=['GET'])
 def home():
@@ -12,7 +13,6 @@ def home():
 
 @app.route('/', methods=['POST'])
 def receive():
-    data = request.json
     print('Incoming message:')
     print(data['sender_type'])
     print(data['text'])
