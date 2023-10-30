@@ -8,9 +8,24 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def home():
     return 'You could put any content here you like, perhaps even a homepage for your bot!'
-
+    
 
 @app.route('/', methods=['POST'])
+def shoutTyla():
+    if data['text'].startswith('1TYLA'):
+        def send(msg):
+            url  = 'https://api.groupme.com/v3/bots/post'
+            print('send url found')
+            postData = {
+                'bot_id': '4e322229309cfb839189723c1d',
+                'text': 'TYLA',
+            }
+            headers = {'Content-Type': 'application/json'}
+            r = requests.post(url, json=postData, headers=headers)
+            print(r.status_code)
+            print(r.text)
+    return 'ok', 200
+
 def receive():
     data = request.json
     print('Incoming message:')
