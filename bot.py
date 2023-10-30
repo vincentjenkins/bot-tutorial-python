@@ -20,8 +20,8 @@ def receive():
     print(data['text'])
     print(data['name'])
     
-    # Prevent self-reply
-    def send(msg):
+    #send text
+    def sendmsg(msg):
         url = 'https://api.groupme.com/v3/bots/post'
         postData = {
             'bot_id': '4e322229309cfb839189723c1d',
@@ -33,6 +33,7 @@ def receive():
         print(r.status_code)
         print(r.text)
     
+    #send image
     def sendimg(img):
         url = 'https://api.groupme.com/v3/bots/post'
         postData = {
@@ -49,17 +50,19 @@ def receive():
         print('send url found')
         print(r.status_code)
         print(r.text)
-
+    
+    # Prevent self-reply
     if data['sender_type'] != 'bot':
         print('not a bot')
-        
+        if "you're fucked kid" in data['text']:
+            print('holy shit')
         if data['text'].startswith('/ping'):
             print('sending data')
-            send(data['name'] + ' pinged me!')
+            sendmsg(data['name'] + ' pinged me!')
         
         elif data['text'].startswith('TYLA'):
             print('sending data')
-            send('TYLA')
+            sendmsg('TYLA')
 
         elif data['text'].startswith('image'):
             print('sending data')
@@ -70,7 +73,7 @@ def receive():
 
 
 
-'''def send(msg):
+'''def sendmsg(msg):
     url  = 'https://api.groupme.com/v3/groups/71853659/messages'
     print('send url found')
     data = {
