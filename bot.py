@@ -13,12 +13,11 @@ def home():
 
 @app.route('/', methods=['POST'])
 
-def shoutTyla():
-    print('TYLA')
-
-while(True):
+'''while(True):
+    def shoutTyla():
+        print('TYLA')
     shoutTyla()
-    time.sleep(10)
+    time.sleep(10)'''
 
 def receive():
     data = request.json
