@@ -21,16 +21,15 @@ def receive():
     # Prevent self-reply
     if data['sender_type'] != 'bot':
         print('not a bot')
-        def send(msg):
-            url  = 'https://api.groupme.com/v3/bots/post'
-            print('send url found')
-            data = {
-                'bot_id': '4e322229309cfb839189723c1d',
-                'text': data['name'] + ' pinged me!',
-            }
-            r = requests.post(url, data=data)
-
         if data['text'].startswith('/ping'):
+            def send(msg):
+                url  = 'https://api.groupme.com/v3/bots/post'
+                print('send url found')
+                data = {
+                    'bot_id': '4e322229309cfb839189723c1d',
+                    'text': data['name'] + ' pinged me!',
+                }
+                r = requests.post(url, data=data)
             print('sending data')
             send(data['name'] + ' pinged me!')
 
