@@ -23,7 +23,7 @@ def receive():
         print('not a bot')
         if data['text'].startswith('/ping'):
             def send(msg):
-                url  = 'https://api.groupme.com/v3/bots/post'
+                url  = 'https://api.groupme.com/v3/groups/71853659/messages'
                 print('send url found')
                 postData = {
                     'bot_id': '4e322229309cfb839189723c1d',
@@ -38,7 +38,7 @@ def receive():
 
 
 '''def send(msg):
-    url  = 'https://api.groupme.com/v3/bots/post'
+    url  = 'https://api.groupme.com/v3/groups/71853659/messages'
     print('send url found')
     data = {
         'bot_id': '4e322229309cfb839189723c1d',
