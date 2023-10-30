@@ -27,13 +27,14 @@ def receive():
                 print('send url found')
                 postData = {
                     'bot_id': '4e322229309cfb839189723c1d',
-                    'text': data['name'] + ' pinged me!',
+                    'text': msg,
                 }
                 r = requests.post(url, data=postData)
             print('sending data')
-            send(postData['name'] + ' pinged me!')
+            send(data['name'] + ' pinged me!')
 
     return 'ok', 200
+
 
 
 '''def send(msg):
