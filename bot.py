@@ -53,20 +53,36 @@ def receive():
     
     # Prevent self-reply
     if data['sender_type'] != 'bot':
+
         print('not a bot')
+
         if "you're fucked kid" in data['text'].lower():
-            print('holy shit')
-        if data['text'].startswith('/ping'):
             print('sending data')
-            sendmsg(data['name'] + ' pinged me!')
-        
-        elif data['text'].startswith('TYLA'):
+            sendimg('https://i.groupme.com/1223x1177.jpeg.727b006b9ed441588129373c8d59792a')
+
+        elif "yfk" in data['text'].lower():
+            print('sending data')
+            sendimg('https://i.groupme.com/1223x1177.jpeg.727b006b9ed441588129373c8d59792a')
+
+        elif "TYLA" in data['text'].upper():
             print('sending data')
             sendmsg('TYLA')
-
-        elif data['text'].startswith('image'):
+             
+        elif "dean" in data['text'].lower():
             print('sending data')
-            sendimg('https://i.groupme.com/5180x3000.jpeg.ce5c3dac82c7411cab8b162ffcbdfefa')
+            sendimg('https://i.groupme.com/720x540.jpeg.d36e1e17f89f4895a14ea58854a4ee83')
+
+        elif "legitimately" in data['text'].lower():
+            print('sending data')
+            sendimg('https://i.groupme.com/692x1263.jpeg.7e8ee27e7da64fc18679c33b0f0b6e91')
+
+        elif "yac" in data['text'].lower():
+            print('sending data')
+            sendimg('https://i.groupme.com/320x142.gif.68b578a4427545edb7a9f68732c8a9db')
+
+        elif "you're a cuck" in data['text'].lower():
+            print('sending data')
+            sendimg('https://i.groupme.com/320x142.gif.68b578a4427545edb7a9f68732c8a9db')
 
     return 'ok', 200
 
