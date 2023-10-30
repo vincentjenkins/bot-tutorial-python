@@ -63,7 +63,7 @@ def receive():
 
         elif data['text'].startswith('image'):
             print('sending data')
-            sendimg('https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg')
+            sendimg('https://i.groupme.com/5180x3000.jpeg.ce5c3dac82c7411cab8b162ffcbdfefa')
 
     return 'ok', 200
 
