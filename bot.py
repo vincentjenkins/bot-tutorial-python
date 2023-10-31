@@ -67,6 +67,10 @@ def receive():
         elif "TYLA" in data['text'].upper():
             print('sending data')
             sendmsg('TYLA')
+
+        elif "butler watch" in data['text'].lower():
+            print('sending data')
+            sendmsg('Tyla looking to repeat at 0-8')
              
         elif "dean" in data['text'].lower():
             print('sending data')
