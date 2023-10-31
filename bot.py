@@ -87,11 +87,12 @@ def receive():
         elif "you're a cuck" in data['text'].lower():
             print('sending data')
             sendimg('https://i.groupme.com/320x142.gif.68b578a4427545edb7a9f68732c8a9db')
+        
+        elif "@matzek" in data['text'].lower():
+            print('sending data')
+            sendimg('https://i.groupme.com/320x320.gif.ffb52eaae32b4a98ae47bed49835af8e')
 
     return 'ok', 200
-
-
-
 
 '''def sendmsg(msg):
     url  = 'https://api.groupme.com/v3/groups/71853659/messages'
